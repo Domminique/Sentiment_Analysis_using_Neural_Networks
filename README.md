@@ -228,7 +228,7 @@ Image(filename='sentiment_network.png')
 
 
 
-![png](output_28_0.png)
+![png](images/output_28_0.png)
 
 
 
@@ -242,7 +242,7 @@ Image(filename='sentiment_network_pos.png')
 
 
 
-![png](output_29_0.png)
+![png](images/output_29_0.png)
 
 
 
@@ -275,7 +275,7 @@ Image(filename='sentiment_network_2.png')
 
 
 
-![png](output_34_0.png)
+![png](images/output_34_0.png)
 
 
 
@@ -305,7 +305,7 @@ Image(filename='sentiment_network.png')
 
 
 
-![png](output_37_0.png)
+![png](images/output_37_0.png)
 
 
 
@@ -689,7 +689,7 @@ Image(filename='sentiment_network_sparse.png')
 
 
 
-![png](output_56_0.png)
+![png](images/output_56_0.png)
 
 
 
@@ -781,7 +781,7 @@ Image(filename='sentiment_network_sparse_2.png')
 
 
 
-![png](output_67_0.png)
+![png](images/output_67_0.png)
 
 
 
@@ -1109,7 +1109,7 @@ Image(filename='sentiment_network_sparse_2.png')
 
 
 
-![png](output_78_0.png)
+![png](images/output_78_0.png)
 
 
 
@@ -1158,9 +1158,7 @@ show(p)
 
 
 
-<div class="bk-root">
-    <div class="bk-plotdiv" id="c926cb78-491e-440c-bd71-c49b43072359"></div>
-</div>
+![png](images/freq_dist.png)
 
 
 
@@ -1186,9 +1184,7 @@ show(p)
 
 
 
-<div class="bk-root">
-    <div class="bk-plotdiv" id="1894b466-5ad3-4f20-a7b7-5186e0baf6b8"></div>
-</div>
+![png](images/histogram.png)
 
 
 
@@ -1662,12 +1658,4 @@ show(p)
 
 # green indicates positive words, black indicates negative words
 ```
-
-
-
-<div class="bk-root">
-    <div class="bk-plotdiv" id="b9dddfa8-1eab-4ea5-808a-7b2262302162"></div>
-</div>
-
-
-
+![png](images/final_classificatio.png)
