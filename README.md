@@ -515,9 +515,7 @@ class SentimentNetwork:
         self.layer_0 *= 0
         
         for word in review.split(" "):
-            # NOTE: This if-check was not in the version of this method created in Project 2,
-            #       and it appears in Andrew's Project 3 solution without explanation. 
-            #       It simply ensures the word is actually a key in word2index before
+            # NOTE: It simply ensures the word is actually a key in word2index before
             #       accessing it, which is important because accessing an invalid key
             #       with raise an exception in Python. This allows us to ignore unknown
             #       words encountered in new reviews.
@@ -816,7 +814,7 @@ the `SentimentNetwork` class more efficient by eliminating unnecessary multiplic
 >* You will be dealing with the old hidden layer more directly, so create `self.layer_1`, a two-dimensional matrix with shape 1 x hidden_nodes, with all values initialized to zero
 * Modify `train`:
 >* Change the name of the input parameter `training_reviews` to `training_reviews_raw`. This will help with the next step.
->* At the beginning of the function, you'll want to preprocess your reviews to convert them to a list of indices (from `word2index`) that are actually used in the review. This is equivalent to what you saw in the video when Andrew set specific indices to 1. Your code should create a local `list` variable named `training_reviews` that should contain a `list` for each review in `training_reviews_raw`. Those lists should contain the indices for words found in the review.
+>* At the beginning of the function, you'll want to preprocess your reviews to convert them to a list of indices (from `word2index`) that are actually used in the review. Your code should create a local `list` variable named `training_reviews` that should contain a `list` for each review in `training_reviews_raw`. Those lists should contain the indices for words found in the review.
 >* Remove call to `update_input_layer`
 >* Use `self`'s  `layer_1` instead of a local `layer_1` object.
 >* In the forward pass, replace the code that updates `layer_1` with new logic that only adds the weights for the indices used in the review.
@@ -968,7 +966,7 @@ class SentimentNetwork:
                 self.layer_1 += self.weights_0_1[index]
 
             # Output layer
-            ## New for Project 5: changed to use 'self.layer_1' instead of 'local layer_1'
+            ## changed to use 'self.layer_1' instead of 'local layer_1'
             layer_2 = self.sigmoid(self.layer_1.dot(self.weights_1_2))            
             
             ### Backward pass ###
@@ -982,10 +980,10 @@ class SentimentNetwork:
             layer_1_delta = layer_1_error # hidden layer gradients - no nonlinearity so it's the same as the error
 
             # Update the weights
-            ## New for Project 5: changed to use 'self.layer_1' instead of local 'layer_1'
+            ##  changed to use 'self.layer_1' instead of local 'layer_1'
             self.weights_1_2 -= self.layer_1.T.dot(layer_2_delta) * self.learning_rate # update hidden-to-output weights with gradient descent step
             
-            ## New for Project 5: Only update the weights that were used in the forward pass
+            ##  Only update the weights that were used in the forward pass
             for index in review:
                 self.weights_0_1[index] -= layer_1_delta[0] * self.learning_rate # update input-to-hidden weights with gradient descent step
 
@@ -1279,7 +1277,7 @@ class SentimentNetwork:
         review_vocab = set()
         for review in reviews:
             for word in review.split(" "):
-                ## New for Project 6: only add words that occur at least min_count times
+                ##  only add words that occur at least min_count times
                 #                     and for words with pos/neg ratios, only add words
                 #                     that meet the polarity_cutoff
                 if(total_counts[word] > min_count):
@@ -1336,7 +1334,7 @@ class SentimentNetwork:
         # The input layer, a two-dimensional matrix with shape 1 x hidden_nodes
         self.layer_1 = np.zeros((1,hidden_nodes))
     
-    ## New for Project 5: Removed update_input_layer function
+    ## Removed update_input_layer function
     
     def get_target_for_label(self,label):
         if(label == 'POSITIVE'):
@@ -1407,10 +1405,10 @@ class SentimentNetwork:
             layer_1_delta = layer_1_error # hidden layer gradients - no nonlinearity so it's the same as the error
 
             # Update the weights
-            ## New for Project 5: changed to use 'self.layer_1' instead of local 'layer_1'
+            ## changed to use 'self.layer_1' instead of local 'layer_1'
             self.weights_1_2 -= self.layer_1.T.dot(layer_2_delta) * self.learning_rate # update hidden-to-output weights with gradient descent step
             
-            ## New for Project 5: Only update the weights that were used in the forward pass
+            ## Only update the weights that were used in the forward pass
             for index in review:
                 self.weights_0_1[index] -= layer_1_delta[0] * self.learning_rate # update input-to-hidden weights with gradient descent step
 
