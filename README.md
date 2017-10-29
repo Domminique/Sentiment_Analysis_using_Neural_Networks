@@ -1658,4 +1658,4 @@ show(p)
 
 # green indicates positive words, black indicates negative words
 ```
-![png](images/final_classificatio.png)
+![png](images/final_classification.png)
