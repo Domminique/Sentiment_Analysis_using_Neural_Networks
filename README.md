@@ -327,6 +327,7 @@ for i,word in enumerate(vocab):
 
 ```python
 def update_input_layer(review):
+    """
     Args:
         review(string) - the string of the review
     Returns:
